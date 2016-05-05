@@ -22,3 +22,10 @@ Output is logged to getcitoken.log
 2) Run ```ruby getcitoken.rb```
 
 3) Receive token and be forever happy!
+
+
+Docker image
+============
+
+The Dockerfile is used to build a container in order to use this
+tool without a Ruby installation.
