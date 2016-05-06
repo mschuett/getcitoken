@@ -2,11 +2,11 @@
 FROM ruby:alpine
 
 # add libraries for nokogiri, then install required gem
-RUN apk add --no-cache libxml2 libxslt
-RUN apk add --no-cache -t buildstuff build-base libxml2-dev libxslt-dev zlib-dev
-RUN gem install nokogiri -- --use-system-libraries
-RUN gem install mechanize
-RUN apk del buildstuff
+RUN apk add --no-cache libxml2 libxslt && \
+    apk add --no-cache -t buildstuff build-base libxml2-dev libxslt-dev zlib-dev && \
+    gem install nokogiri -- --use-system-libraries && \
+    gem install mechanize && \
+    apk del buildstuff
 
 # copy our own scripts and set parameter defaults
 ADD run.sh getcitoken.rb ./
