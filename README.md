@@ -27,6 +27,8 @@ Output is logged to getcitoken.log
 Docker image
 ============
 
+[![Docker Repository on Quay](https://quay.io/repository/mschuette/getcitoken/status "Docker Repository on Quay")](https://quay.io/repository/mschuette/getcitoken)
+
 The Dockerfile is used to build a container in order to use this
 tool without a Ruby installation. The image can be used read-only,
 it will output information logs to stderr and the token to stdout.
