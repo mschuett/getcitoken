@@ -7,11 +7,12 @@ require 'mechanize'
 require 'logger'
 require 'yaml'
 
-config = YAML.load_file('config.yml')
+config = YAML.load($stdin)
 gitlab_ci_url = config['gitlab_ci_url']
 
 agent = Mechanize.new
-agent.log = Logger.new "getcitoken.log"
+agent.log = Logger.new STDERR
+agent.log.level = Logger::INFO
 
 login_page = agent.get gitlab_ci_url+"/users/sign_in"
 login_form = login_page.form
